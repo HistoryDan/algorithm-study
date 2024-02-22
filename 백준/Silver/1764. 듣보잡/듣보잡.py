@@ -1,20 +1,17 @@
 import sys
+input = sys.stdin.readline
+n,m = map(int, input().split())
+
 hear = set()
-see = set()
-n, m = map(int, sys.stdin.readline().rstrip().split())
-
+answer = []
 for _ in range(n):
-    name = sys.stdin.readline().rstrip()
-    hear.add(name)
-
+    hear.add(input().strip())
 for _ in range(m):
-    name = sys.stdin.readline().rstrip()
-    see.add(name)
+    word = input().strip()
+    if word in hear:
+        answer.append(word)
+answer.sort()
 
-rslt = hear.intersection(see)
-rslt = sorted(rslt)
-
-print(len(rslt))
-
-for name in rslt:
-    print(name)
+print(len(answer))
+for i in answer:
+    print(i)
