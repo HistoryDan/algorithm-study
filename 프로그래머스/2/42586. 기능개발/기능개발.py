@@ -18,6 +18,6 @@ def solution(progresses, speeds):
             answer.append(len(stack))
             stack.clear()
             stack.append(largest)
-    
-    answer.append(len(stack))
+    if stack:
+        answer.append(len(stack))
     return answer
